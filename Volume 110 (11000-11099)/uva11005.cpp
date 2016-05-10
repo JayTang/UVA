@@ -7,7 +7,7 @@ using namespace std;
 int main() {
     int ncase, nquery, num, costs[36];
     cin >> ncase;
- 
+
     for (int i = 1; i <= ncase; i++) {
         if (i > 1) cout << endl; // print empty line between cases
         cout << "Case " << i << ":" << endl;
