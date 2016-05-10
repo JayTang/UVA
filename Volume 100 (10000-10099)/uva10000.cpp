@@ -35,6 +35,8 @@ int main() {
 
         // depth first search
         pair<int, int> longest_path = travel(path, spoint, 0);
+        
+        // print result
         cout << "Case " << ncase++ << ": The longest path from " << spoint << " has length " << longest_path.second << ", finishing at " << longest_path.first << "." << endl << endl;
     }
 
