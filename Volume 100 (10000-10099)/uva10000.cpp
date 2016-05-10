@@ -9,10 +9,12 @@ pair<int, int> travel(pair<vector<int>, int> *path, int from, int distance) {
     if (path[from].second > distance) return pair<int, int>(from, path[from].second);
 
     path[from].second = distance;
-
+    
     pair<int, int> longest(from, path[from].second), current;
     for (int i: path[from].first) {
         current = travel(path, i, distance + 1);
+        
+        // update longest path
         if (current.second > longest.second) longest = current;
         else if (current.second == longest.second && current.first < longest.first) longest.first = current.first;
     }
@@ -33,7 +35,7 @@ int main() {
             path[from].second = 0;
         }
 
-        // depth first search
+        // depth first search for longest path
         pair<int, int> longest_path = travel(path, spoint, 0);
         
         // print result
