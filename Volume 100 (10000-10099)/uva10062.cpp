@@ -9,11 +9,11 @@ class frequency {
     char letter;
     int count;
     frequency(char c, int i = 0): letter(c), count(i) {}
-
+    
+    // sorting rule 
     bool operator < (const frequency& other) const {
-        if (count > other.count) return false;
-        else if (count < other.count) return true;
-        else return (letter > other.letter);
+        if (count != other.count) return count < other.count;
+        else return letter > other.letter;
     }
 };
 
@@ -28,10 +28,10 @@ int main() {
         for (int i = 32; i <= 127; i++)
             list.push_back(frequency(i));
 
-        // count
+        // count letter
         for (char c: input) list[c - 32].count++;
 
-        // sort
+        // sort frequency
         sort(list.begin(), list.end());
 
         // print result
