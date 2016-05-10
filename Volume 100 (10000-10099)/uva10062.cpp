@@ -21,8 +21,7 @@ int main() {
     string input;
     
     for (int i = 0; getline(cin, input); i++) {
-        // print empty line between cases
-        if (i != 0) cout << endl;
+        if (i != 0) cout << endl; // print empty line between cases
         
         // class init
         vector<frequency> list;
